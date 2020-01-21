@@ -1,4 +1,4 @@
-package com.example.nasainformatorapp
+package com.example.nasaklasa
 
 import org.junit.Test
 
