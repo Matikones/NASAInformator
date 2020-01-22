@@ -1,16 +1,19 @@
 package com.example.nasaklasa.ui.main
 
-import androidx.lifecycle.ViewModelProviders
+
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.lifecycle.Observer
-import com.example.nasaklasa.R
-import kotlinx.android.synthetic.main.main_fragment.*
+import androidx.lifecycle.ViewModelProviders
 
-class MainFragment : Fragment() {
+import com.example.nasaklasa.R
+import kotlinx.android.synthetic.main.fragment_earth.*
+
+class Earth : Fragment() {
 
     lateinit var mainViewModel : MainViewModel
 
@@ -19,8 +22,8 @@ class MainFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View {
-        return inflater.inflate(R.layout.main_fragment, container, false)
+    ): View? {
+        return inflater.inflate(R.layout.fragment_earth, container, false)
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
@@ -31,12 +34,12 @@ class MainFragment : Fragment() {
             ViewModelProviders.of(this).get(MainViewModel::class.java)
         }
 
-        mainViewModel.getStringMain().observe(this, object : Observer<List<String>> {
+        mainViewModel.getStringEarth().observe(this, object : Observer<List<String>> {
             override fun onChanged(t: List<String>) {
-                Title.text = t[0]
+                Id.text = t[2]
                 Date.text = t[1]
-                Url.text = t[2]
-                Explanation.text = t[3]
+                Cloud_score.text = t[0]
+                Url.text = t[4]
             }
         })
     }

@@ -18,11 +18,15 @@ class MainViewModel : ViewModel() {
 
     var mutableLiveData = MutableLiveData<List<String>>()
 
-    fun getString(): LiveData<List<String>> {
-
+    fun getStringMain(): LiveData<List<String>> {
         mutableLiveData = model.mainFragmentData()
-
         return mutableLiveData
+    }
 
+    var mutableLiveData2 = MutableLiveData<List<String>>()
+
+    fun getStringEarth(): LiveData<List<String>> {
+        mutableLiveData2 = model.earthFragmentData()
+        return mutableLiveData2
     }
 }

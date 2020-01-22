@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/act0"
+        android:title="Main" />
+    <item
+        android:id="@+id/act1"
+        android:title="Earth info" />
+    <item
+        android:id="@+id/act2"
+        android:title="finkcjaMateusz" />
+    <item
+        android:id="@+id/act3"
+        android:title="funkcajaFilip" />
+</menu>

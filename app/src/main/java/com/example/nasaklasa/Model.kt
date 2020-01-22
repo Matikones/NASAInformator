@@ -45,4 +45,43 @@ class Model {
             })
         return mutableLiveData
     }
+
+    fun earthFragmentData(): MutableLiveData<List<String>>{
+
+        val mutableLiveData = MutableLiveData<List<String>>()
+        val retrofit = Retrofit.Builder()
+            .baseUrl("https://api.nasa.gov/planetary/")
+            .addConverterFactory(GsonConverterFactory.create())
+            .build()
+        val jsonPlaceHolderApi = retrofit.create(
+            JsonPlaceHolderApiEarth::class.java
+        )
+        val call: retrofit2.Call<PostEarth> = jsonPlaceHolderApi.getPosts()
+
+        call!!.enqueue(
+            object : Callback<PostEarth> {
+                override fun onResponse(
+                    call: retrofit2.Call<PostEarth>,
+                    response: Response<PostEarth>
+                ) {
+                    if (!response.isSuccessful) {
+                        return
+                    }
+                    val posts = response.body()!!
+                    var list = mutableListOf<String>()
+                    list.add(posts.getCloud_score())
+                    list.add(posts.getDate())
+                    list.add(posts.getId().toString())
+                    list.add(posts.getService_version().toString())
+                    list.add(posts.getUrl().toString())
+                    mutableLiveData.value = list
+                }
+
+                override fun onFailure(
+                    call: retrofit2.Call<PostEarth>,
+                    t: Throwable
+                ) { }
+            })
+        return mutableLiveData
+    }
 }
