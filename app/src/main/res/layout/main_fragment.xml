@@ -27,25 +27,43 @@
                 android:id="@+id/Title"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textColor="#FFFFFF" />
+                android:fontFamily="@font/exo_2_thin"
+                android:textColor="#FFFFFF"
+                android:textSize="24sp"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/Date"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textColor="#FFFFFF" />
+                android:fontFamily="@font/exo_2_thin"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/Explanation"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textColor="#FFFFFF" />
+                android:fontFamily="@font/exo_2_thin"
+                android:textColor="#FFFFFF"
+                android:textSize="12sp" />
+
+            <ImageView
+                android:id="@+id/ivImageMain"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="20dp"/>
 
             <TextView
                 android:id="@+id/Url"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textColor="#FFFFFF" />
+                android:fontFamily="@font/exo_2_thin"
+                android:textAlignment="textEnd"
+                android:textColor="#FFFFFF"
+                android:textSize="8sp" />
+
 
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>

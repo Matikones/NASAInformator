@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
+import com.bumptech.glide.Glide
 
 import com.example.nasaklasa.R
 import kotlinx.android.synthetic.main.fragment_earth.*
@@ -34,12 +35,21 @@ class Earth : Fragment() {
             ViewModelProviders.of(this).get(MainViewModel::class.java)
         }
 
+        var imageUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/NASA_logo.svg/1200px-NASA_logo.svg.png"
+
         mainViewModel.getStringEarth().observe(this, object : Observer<List<String>> {
             override fun onChanged(t: List<String>) {
                 Id.text = t[2]
                 Date.text = t[1]
                 Cloud_score.text = t[0]
                 Url.text = t[4]
+                imageUrl = t[4]
+
+                Glide.with(this@Earth)
+                    .load(imageUrl)
+                    .fitCenter()
+                    .placeholder(R.drawable.ic_nasa_background)
+                    .into(ivImage)
             }
         })
     }
