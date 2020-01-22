@@ -35,20 +35,18 @@ class MainFragment : Fragment() {
             ViewModelProviders.of(this).get(MainViewModel::class.java)
         }
 
-        var imageUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/NASA_logo.svg/1200px-NASA_logo.svg.png"
-
         mainViewModel.getStringMain().observe(this, object : Observer<List<String>> {
             override fun onChanged(t: List<String>) {
                 Title.text = t[0]
                 Date.text = t[1]
                 Url.text = t[2]
                 Explanation.text = t[3]
-                imageUrl = t[2]
+                var imageUrl = t[2]
 
                 Glide.with(this@MainFragment)
                     .load(imageUrl)
                     .fitCenter()
-                    .placeholder(R.drawable.ic_nasa_background)
+                    .placeholder(R.mipmap.ic_nasa_foreground)
                     .into(ivImageMain)
             }
         })

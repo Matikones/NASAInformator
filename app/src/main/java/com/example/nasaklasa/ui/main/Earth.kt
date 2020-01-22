@@ -35,20 +35,18 @@ class Earth : Fragment() {
             ViewModelProviders.of(this).get(MainViewModel::class.java)
         }
 
-        var imageUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/NASA_logo.svg/1200px-NASA_logo.svg.png"
-
         mainViewModel.getStringEarth().observe(this, object : Observer<List<String>> {
             override fun onChanged(t: List<String>) {
                 Id.text = t[2]
                 Date.text = t[1]
                 Cloud_score.text = t[0]
                 Url.text = t[4]
-                imageUrl = t[4]
+                var imageUrl = t[4]
 
                 Glide.with(this@Earth)
                     .load(imageUrl)
                     .fitCenter()
-                    .placeholder(R.drawable.ic_nasa_background)
+                    .placeholder(R.mipmap.ic_nasa_foreground)
                     .into(ivImage)
             }
         })
