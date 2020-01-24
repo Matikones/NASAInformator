@@ -13,6 +13,8 @@ import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTube
 import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.YouTubePlayer
 import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.listeners.AbstractYouTubePlayerListener
 
+
+
 class TVFragment : Fragment() {
     lateinit var mainViewModel: MainViewModel
     lateinit var youTubePlayerView: YouTubePlayerView
@@ -32,8 +34,10 @@ class TVFragment : Fragment() {
         }
 
         youTubePlayerView = view!!.findViewById(R.id.youtube_player_view)
+        initYouTubePlayerView()
+    }
+    private fun initYouTubePlayerView() {
         lifecycle.addObserver(youTubePlayerView)
-
         youTubePlayerView.addYouTubePlayerListener(object : AbstractYouTubePlayerListener() {
             override fun onReady(youTubePlayer: YouTubePlayer) {
                 val videoId = "21X5lGlDOfg"
