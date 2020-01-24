@@ -12,6 +12,9 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 class Model {
 
+    var recyclerView123: RecyclerView? = null
+
+
     fun mainFragmentData(): MutableLiveData<List<String>>{
 
         val mutableLiveData = MutableLiveData<List<String>>()
@@ -101,7 +104,7 @@ class Model {
         return savedata.count()
     }
 
-    fun unsave(context: Context, id: Int){
+    fun unsave(context: Context, id: String, bol: Boolean){
         var users = mutableListOf<SaveFormat>()
         var db = Db_Helper(context)
         users = db.getAllSaveFormat()
@@ -114,10 +117,17 @@ class Model {
             }
         }
         Log.e("usun", cosw.toString())
+        if (bol){
+            cosw = id.toInt()
+        }
         db.deleteUser(cosw)
+
+
+
     }
 
     fun recycler(context: Context, recyclerView: RecyclerView){
+        recyclerView123 = recyclerView
         var users = mutableListOf<SaveFormat>()
         var db = Db_Helper(context)
         users = db.getAllSaveFormat()

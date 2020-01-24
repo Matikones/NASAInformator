@@ -55,7 +55,7 @@ class Earth : Fragment() {
                 mainViewModel.save(this.requireContext(), Id.text.toString(), Date_row.text.toString(), Cloud_score.text.toString(), "", Url_row.text.toString())
             }
             else{
-                mainViewModel.unsave(this.requireContext())
+                mainViewModel.unsave(this.requireContext(), "0", false)
             }
 
         }

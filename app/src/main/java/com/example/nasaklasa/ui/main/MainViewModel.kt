@@ -35,9 +35,9 @@ class MainViewModel : ViewModel() {
         Log.e("czydziała","działa - ")
     }
 
-    fun unsave(context: Context){
-        model.unsave(context, lastRecord)
-        Log.e("czydziała","nie działa - ")
+    fun unsave(context: Context, black: String, Habahaba: Boolean){
+            model.unsave(context, black, Habahaba)
+            Log.e("czydziała","nie działa - ")
     }
 
     fun recycler(context: Context, recyclerView: RecyclerView){

@@ -1,16 +1,23 @@
 package com.example.nasaklasa
 
 import android.content.Context
+import android.content.Intent
 import android.database.Cursor
 import android.database.CursorWrapper
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.CheckBox
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.example.nasaklasa.ui.main.MainViewModel
+import com.example.nasaklasa.ui.main.Save
 import kotlinx.android.synthetic.main.fragment_earth.*
+import kotlinx.android.synthetic.main.save_row.view.*
+
 
 class UserListAdapter(var users: MutableList<SaveFormat>, var  context: Context, var recyclerView: RecyclerView): RecyclerView.Adapter<UserListAdapter.ViewHolder>(){
 
@@ -37,6 +44,17 @@ class UserListAdapter(var users: MutableList<SaveFormat>, var  context: Context,
             .fitCenter()
             .placeholder(R.mipmap.ic_nasa_foreground)
             .into(holder.userImage)
+
+        holder.itemView.zapisz_row.setOnCheckedChangeListener{zapisz_row, isChecked->
+            if (zapisz_row.isChecked){
+                Log.e("last","działa")
+            }else{
+                Log.e("last"," niedziała")
+                val mainViewModel = MainViewModel()
+                mainViewModel.unsave(context, user.ID.toString(), true)
+
+            }
+        }
     }
 
     class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
@@ -47,6 +65,7 @@ class UserListAdapter(var users: MutableList<SaveFormat>, var  context: Context,
         var userOtherText = itemView.findViewById<TextView>(R.id.Other_row)
         var userUrlText = itemView.findViewById<TextView>(R.id.Url_row)
         var userImage = itemView.findViewById<ImageView>(R.id.ivImageMain_row)
+        var userCheckbox = itemView.findViewById<CheckBox>(R.id.zapisz_row)
     }
 
 }
