@@ -10,55 +10,64 @@
         android:layout_height="match_parent"
         android:background="#050202"
         android:padding="10dp">
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="#050202"
-        android:padding="10dp"
-        android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/Id"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/exo_2_thin"
-            android:textColor="#FFFFFF"
-            android:textSize="24sp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/Date"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/exo_2_thin"
-            android:textColor="#FFFFFF"
-            android:textSize="18sp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/Cloud_score"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/exo_2_thin"
-            android:textColor="#FFFFFF"
-            android:textSize="12sp" />
-
-        <ImageView
-            android:id="@+id/ivImage"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:contentDescription="@string/imageV"
-            android:padding="20dp" />
+            android:background="#050202"
+            android:orientation="vertical"
+            android:padding="10dp">
 
-        <TextView
-            android:id="@+id/Url"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/exo_2_thin"
-            android:textAlignment="textEnd"
-            android:textColor="#FFFFFF"
-            android:textSize="12sp" />
+            <TextView
+                android:id="@+id/Id"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/exo_2_thin"
+                android:textColor="#FFFFFF"
+                android:textSize="24sp"
+                android:textStyle="bold" />
 
-    </LinearLayout>
+            <TextView
+                android:id="@+id/Date_row"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/exo_2_thin"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/Cloud_score"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/exo_2_thin"
+                android:textColor="#FFFFFF"
+                android:textSize="12sp" />
+
+            <ImageView
+                android:id="@+id/ivImage"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:contentDescription="@string/imageV"
+                android:padding="20dp" />
+
+            <TextView
+                android:id="@+id/Url_row"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/exo_2_thin"
+                android:textAlignment="textEnd"
+                android:textColor="#FFFFFF"
+                android:textSize="12sp" />
+
+            <CheckBox
+                android:id="@+id/Zapisz"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:buttonTint="#FFFFFF"
+                android:text="Zapisz"
+                android:textColor="#FFFFFF" />
+
+        </LinearLayout>
     </androidx.core.widget.NestedScrollView>
 </FrameLayout>
