@@ -102,8 +102,19 @@ class Model {
     }
 
     fun unsave(context: Context, id: Int){
+        var users = mutableListOf<SaveFormat>()
         var db = Db_Helper(context)
-        db.deleteUser(id)
+        users = db.getAllSaveFormat()
+        var cosw: Int = 0
+        users.forEach{
+            var cos = it.ID.toString()
+            var cos2 = cos.toInt()
+            if (cos2 > cosw){
+                cosw = cos2
+            }
+        }
+        Log.e("usun", cosw.toString())
+        db.deleteUser(cosw)
     }
 
     fun recycler(context: Context, recyclerView: RecyclerView){
