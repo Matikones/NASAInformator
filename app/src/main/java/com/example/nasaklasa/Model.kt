@@ -1,6 +1,10 @@
 package com.example.nasaklasa
 
+import android.content.Context
+import android.util.Log
 import androidx.lifecycle.MutableLiveData
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import retrofit2.Callback
 import retrofit2.Response
 import retrofit2.Retrofit
@@ -83,5 +87,30 @@ class Model {
                 ) { }
             })
         return mutableLiveData
+    }
+
+    fun save(context: Context, title: String, date: String, desc: String, other: String, url: String): Int{
+        var db = Db_Helper(context)
+        val newSaveFormat = SaveFormat(null, title, date, desc, other, url)
+        db.insertData(newSaveFormat)
+
+        var savedata = mutableListOf<SaveFormat>()
+        savedata = db.getAllSaveFormat()
+
+        Log.e("czydziała",savedata.count().toString())
+        return savedata.count()
+    }
+
+    fun unsave(context: Context, id: Int){
+        var db = Db_Helper(context)
+        db.deleteUser(id)
+    }
+
+    fun recycler(context: Context, recyclerView: RecyclerView){
+        var users = mutableListOf<SaveFormat>()
+        var db = Db_Helper(context)
+        users = db.getAllSaveFormat()
+        recyclerView.layoutManager = LinearLayoutManager(context,RecyclerView.VERTICAL,false)
+        recyclerView.adapter = UserListAdapter(users,context,recyclerView)
     }
 }

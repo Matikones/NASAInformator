@@ -12,5 +12,8 @@
         android:title="finkcjaMateusz" />
     <item
         android:id="@+id/act3"
-        android:title="funkcajaFilip" />
+        android:title="funkcjaFilip" />
+    <item
+        android:id="@+id/act4"
+        android:title="Zapisane" />
 </menu>
