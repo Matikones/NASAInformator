@@ -42,6 +42,7 @@ class TVFragment : Fragment() {
             override fun onReady(youTubePlayer: YouTubePlayer) {
                 val videoId = "21X5lGlDOfg"
                 youTubePlayer.loadVideo(videoId, 0f)
+                youTubePlayerView.enterFullScreen()
             }
         })
     }

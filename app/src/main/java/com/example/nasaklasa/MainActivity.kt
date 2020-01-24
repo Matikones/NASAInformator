@@ -5,6 +5,7 @@ import android.database.Cursor
 import android.database.CursorWrapper
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.*
 import android.widget.TextView
 import android.widget.Toast
@@ -27,12 +28,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.main_activity)
-
-        val fragment = MainFragment()
-        supportFragmentManager.beginTransaction().apply {
-            add(R.id.container, fragment)
-            commit()
-        }
+        updateUI()
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -69,5 +65,35 @@ class MainActivity : AppCompatActivity() {
 
         }
         return super.onOptionsItemSelected(item)
+    }
+    private fun updateUI(){
+        val fm = supportFragmentManager
+        var fragment = fm.findFragmentById(R.id.container)
+        if(fragment == null){
+            fragment = MainFragment()
+            fm.beginTransaction().add(R.id.container, fragment).commit()
+        }
+        else if(fragment is Earth){
+            fragment = Earth()
+            fm.beginTransaction().replace(R.id.container, fragment).commit()
+        }
+//        else if(fragment is nazwaklasyfragmentuMateusza){
+//            fragment = nazwaklasyfragmentuMateusza()
+//            fm.beginTransaction().replace(R.id.container, fragment).commit()
+//        }
+        else if(fragment is TVFragment){
+            fragment = TVFragment()
+            fm.beginTransaction().replace(R.id.container, fragment).commit()
+        }
+        else if(fragment is Save){
+            fragment = Save()
+            fm.beginTransaction().replace(R.id.container, fragment).commit()
+        }
+        else{
+            Log.w("fragment", "Niezdefiniowany fragment do wyswietlenia")
+            supportFragmentManager.beginTransaction()
+                .replace(R.id.container, MainFragment())
+                .commitNow()
+        }
     }
 }
