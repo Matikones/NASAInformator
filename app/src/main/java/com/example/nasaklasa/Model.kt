@@ -104,7 +104,7 @@ class Model {
         return savedata.count()
     }
 
-    fun unsave(context: Context, id: String, bol: Boolean){
+    fun unsave(context: Context, id: String, bol: Boolean): MutableList<SaveFormat>{
         var users = mutableListOf<SaveFormat>()
         var db = Db_Helper(context)
         users = db.getAllSaveFormat()
@@ -121,9 +121,7 @@ class Model {
             cosw = id.toInt()
         }
         db.deleteUser(cosw)
-
-
-
+        return users
     }
 
     fun recycler(context: Context, recyclerView: RecyclerView){

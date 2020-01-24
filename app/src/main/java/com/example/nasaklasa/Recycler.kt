@@ -53,6 +53,7 @@ class UserListAdapter(var users: MutableList<SaveFormat>, var  context: Context,
                 val mainViewModel = MainViewModel()
                 mainViewModel.unsave(context, user.ID.toString(), true)
 
+                mainViewModel.recycler(context, recyclerView) // do odświerzenia recyclera
             }
         }
     }
