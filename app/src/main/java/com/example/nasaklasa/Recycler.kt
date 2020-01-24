@@ -6,8 +6,11 @@ import android.database.CursorWrapper
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
+import kotlinx.android.synthetic.main.fragment_earth.*
 
 class UserListAdapter(var users: MutableList<SaveFormat>, var  context: Context, var recyclerView: RecyclerView): RecyclerView.Adapter<UserListAdapter.ViewHolder>(){
 
@@ -29,6 +32,11 @@ class UserListAdapter(var users: MutableList<SaveFormat>, var  context: Context,
         holder.userDescText.text = user.Desc
         holder.userOtherText.text = user.Other
         holder.userUrlText.text = user.Url
+        Glide.with(context)
+            .load(user.Url)
+            .fitCenter()
+            .placeholder(R.mipmap.ic_nasa_foreground)
+            .into(holder.userImage)
     }
 
     class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
@@ -38,6 +46,7 @@ class UserListAdapter(var users: MutableList<SaveFormat>, var  context: Context,
         var userDescText = itemView.findViewById<TextView>(R.id.Desc_row)
         var userOtherText = itemView.findViewById<TextView>(R.id.Other_row)
         var userUrlText = itemView.findViewById<TextView>(R.id.Url_row)
+        var userImage = itemView.findViewById<ImageView>(R.id.ivImageMain_row)
     }
 
 }

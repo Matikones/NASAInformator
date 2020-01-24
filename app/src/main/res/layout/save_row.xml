@@ -60,5 +60,14 @@
         android:textColor="#FFFFFF"
         android:textSize="12sp" />
 
+    <CheckBox
+        android:id="@+id/zapisz_row"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:buttonTint="#FFFFFF"
+        android:checked="true"
+        android:text="Zapisz"
+        android:textColor="#FFFFFF" />
+
 
 </LinearLayout>
