@@ -11,6 +11,7 @@ import android.view.ViewGroup
 import android.widget.CheckBox
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.nasaklasa.ui.main.MainViewModel
@@ -54,6 +55,8 @@ class UserListAdapter(var users: MutableList<SaveFormat>, var  context: Context,
                 mainViewModel.unsave(context, user.ID.toString(), true)
 
                 mainViewModel.recycler(context, recyclerView) // do odświerzenia recyclera
+
+                Toast.makeText(context,"Usunięto",Toast.LENGTH_LONG).show()
             }
         }
     }
