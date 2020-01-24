@@ -12,5 +12,5 @@
         android:title="finkcjaMateusz" />
     <item
         android:id="@+id/act3"
-        android:title="funkcajaFilip" />
+        android:title="Nasa TV" />
 </menu>

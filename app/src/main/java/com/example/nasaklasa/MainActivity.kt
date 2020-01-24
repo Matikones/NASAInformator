@@ -9,6 +9,7 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.example.nasaklasa.ui.main.Earth
 import com.example.nasaklasa.ui.main.MainFragment
+import com.example.nasaklasa.ui.main.TVFragment
 import kotlinx.android.synthetic.main.main_activity.*
 import kotlinx.android.synthetic.main.main_fragment.*
 import retrofit2.Callback
@@ -49,7 +50,9 @@ class MainActivity : AppCompatActivity() {
             Toast.makeText(this, "funkcja Mateusza ", Toast.LENGTH_LONG).show()
         }
         if (item.itemId == R.id.act3){
-            Toast.makeText(this, "funkcja Filipa", Toast.LENGTH_LONG).show()
+            supportFragmentManager.beginTransaction()
+                .replace(R.id.container, TVFragment())
+                .commitNow()
         }
         return super.onOptionsItemSelected(item)
     }
