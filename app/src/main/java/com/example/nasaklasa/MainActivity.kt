@@ -57,6 +57,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             supportFragmentManager.beginTransaction()
                 .replace(R.id.container, MainFragment())
                 .commitNow()
+
         }
         if (item.itemId == R.id.act1){
             supportFragmentManager.beginTransaction()
@@ -76,11 +77,12 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 .replace(R.id.container, Save())
                 .commitNow()
 
-            var mainViewModel = MainViewModel()
-            var recyclerView = findViewById<RecyclerView>(R.id.recyclerView22446)
+            val mainViewModel = MainViewModel()
+            val recyclerView = findViewById<RecyclerView>(R.id.recyclerView22446)
             mainViewModel.recycler(this, recyclerView)
 
         }
+        drawerLayout.closeDrawer(GravityCompat.START)
         return super.onOptionsItemSelected(item)
     }
 
