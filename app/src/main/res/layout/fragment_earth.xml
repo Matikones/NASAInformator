@@ -18,12 +18,13 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/Id"
+                android:id="@+id/Title"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/exo_2_thin"
+                android:text="About your planet"
                 android:textColor="#FFFFFF"
-                android:textSize="24sp"
+                android:textSize="26sp"
                 android:textStyle="bold" />
 
             <TextView
@@ -31,30 +32,53 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/exo_2_thin"
+                android:text="2020-01-01"
                 android:textColor="#FFFFFF"
-                android:textSize="18sp"
-                android:textStyle="bold" />
+                android:textSize="20sp" />
 
-            <TextView
-                android:id="@+id/Cloud_score"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/exo_2_thin"
-                android:textColor="#FFFFFF"
-                android:textSize="12sp" />
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:paddingTop="20dp">
+
+                <TextView
+                    android:id="@+id/txtViewLblCloud"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/LblCloudScore"
+                    android:textColor="#FFFFFF"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/Cloud_score"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/exo_2_thin"
+                    android:text="0.08123456"
+                    android:textColor="#FFFFFF"
+                    android:textSize="16sp"
+                    android:gravity="right"/>
+            </LinearLayout>
 
             <ImageView
                 android:id="@+id/ivImage"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:contentDescription="@string/imageV"
-                android:padding="20dp" />
+                android:cropToPadding="false"
+                android:scaleType="centerInside"
+                android:src="@drawable/example_image"
+                android:paddingTop="20dp"
+                android:adjustViewBounds="true"/>
 
             <TextView
                 android:id="@+id/Url_row"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/exo_2_thin"
+                android:text="http://www.google.pl"
                 android:textAlignment="textEnd"
                 android:textColor="#FFFFFF"
                 android:textSize="12sp" />

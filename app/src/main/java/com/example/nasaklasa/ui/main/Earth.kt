@@ -36,7 +36,6 @@ class Earth : Fragment() {
 
         mainViewModel.getStringEarth().observe(this, object : Observer<List<String>> {
             override fun onChanged(t: List<String>) {
-                Id.text = t[2]
                 Date_row.text = t[1]
                 Cloud_score.text = t[0]
                 Url_row.text = t[4]
@@ -53,7 +52,7 @@ class Earth : Fragment() {
 
         Zapisz.setOnCheckedChangeListener{Zapisz, isChecked ->
             if (Zapisz.isChecked){
-                mainViewModel.save(this.requireContext(), Id.text.toString(), Date_row.text.toString(), Cloud_score.text.toString(), "", Url_row.text.toString())
+                mainViewModel.save(this.requireContext(), Title.text.toString(), Date_row.text.toString(), Cloud_score.text.toString(), "", Url_row.text.toString())
                 Toast.makeText(context, "Zapisano", Toast.LENGTH_LONG).show()
             }
             else{
