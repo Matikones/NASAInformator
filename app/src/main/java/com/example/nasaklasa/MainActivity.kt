@@ -1,6 +1,8 @@
 package com.example.nasaklasa
 
 import android.content.Context
+import android.content.Intent
+import android.content.IntentFilter
 import android.database.Cursor
 import android.database.CursorWrapper
 import androidx.appcompat.app.AppCompatActivity
@@ -33,6 +35,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     lateinit var toolbar: Toolbar
     lateinit var drawerLayout: DrawerLayout
     lateinit var navView: NavigationView
+    lateinit var myBroadcastReceiver: MyBroadcastReceiver
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -116,5 +119,21 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 .replace(R.id.container, MainFragment())
                 .commitNow()
         }
+    }
+
+    //wywołuje się gdy aplikacja jest widoczna
+    override fun onResume() {
+        super.onResume()
+
+        //rejestrowanie broadcasta
+        myBroadcastReceiver = MyBroadcastReceiver()
+        registerReceiver(myBroadcastReceiver, IntentFilter(Intent.ACTION_AIRPLANE_MODE_CHANGED))
+    }
+
+    //wywołuje się, gdy aplikacja schodzi na background
+    override fun onPause(){
+        super.onPause()
+        //odrejestrowanie naszego broadcasta
+        unregisterReceiver(myBroadcastReceiver)
     }
 }
