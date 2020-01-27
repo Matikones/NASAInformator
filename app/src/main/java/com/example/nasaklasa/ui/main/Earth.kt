@@ -2,19 +2,21 @@ package com.example.nasaklasa.ui.main
 
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.FrameLayout
 import android.widget.ProgressBar
 import android.widget.Toast
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.bumptech.glide.Glide
-
 import com.example.nasaklasa.R
 import kotlinx.android.synthetic.main.fragment_earth.*
+import java.text.SimpleDateFormat
+
 
 class Earth : Fragment() {
 
@@ -58,6 +60,14 @@ class Earth : Fragment() {
 
                 progressBar.visibility = View.GONE
                 container.visibility = View.VISIBLE
+
+                //Zadanie 3
+                val parser = SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss")
+                val formatter = SimpleDateFormat("HH:mm dd.MM.yyyy")
+                val output: String = formatter.format(parser.parse(t[1]))
+                Log.e("tag", output)
+                Date_row.text = output
+                //Koniec zadania 3
             }
         })
 //------------------------------------------------------------------------------
