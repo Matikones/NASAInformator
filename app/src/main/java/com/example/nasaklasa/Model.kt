@@ -82,6 +82,11 @@ class Model {
                     list.add(posts.getUrl().toString())
                     mutableLiveData.value = list
                 }
+//                for(i in 0..długość_listy){
+//                var lista = mutableListOf<String>()
+//                lista.add(to_co_dodajesz_do_listy)}
+//
+//                mutableLiveData = lista
 
                 override fun onFailure(
                     call: retrofit2.Call<PostEarth>,
