@@ -5,6 +5,7 @@ import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 import retrofit2.Retrofit
@@ -60,9 +61,7 @@ class Model {
             .baseUrl("https://api.nasa.gov/planetary/")
             .addConverterFactory(GsonConverterFactory.create())
             .build()
-        val jsonPlaceHolderApi = retrofit.create(
-            JsonPlaceHolderApiEarth::class.java
-        )
+        val jsonPlaceHolderApi = retrofit.create(JsonPlaceHolderApiEarth::class.java)
         val call: retrofit2.Call<PostEarth> = jsonPlaceHolderApi.getPosts()
 
         call!!.enqueue(

@@ -15,17 +15,13 @@ import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.nasaklasa.ui.main.Earth
-import com.example.nasaklasa.ui.main.MainFragment
-import com.example.nasaklasa.ui.main.TVFragment
+import com.example.nasaklasa.ui.main.*
 import kotlinx.android.synthetic.main.main_activity.*
 import kotlinx.android.synthetic.main.main_fragment.*
 import retrofit2.Callback
 import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-import com.example.nasaklasa.ui.main.MainViewModel
-import com.example.nasaklasa.ui.main.Save
 import com.google.android.material.navigation.NavigationView
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
@@ -65,7 +61,9 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 .commitNow()
         }
         if (item.itemId == R.id.act2){
-            Toast.makeText(this, "funkcja Mateusza ", Toast.LENGTH_LONG).show()
+            supportFragmentManager.beginTransaction()
+                .replace(R.id.container, MarsFragment())
+                .commitNow()
         }
         if (item.itemId == R.id.act3){
             supportFragmentManager.beginTransaction()
@@ -97,10 +95,10 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             fragment = Earth()
             fm.beginTransaction().replace(R.id.container, fragment).commit()
         }
-//        else if(fragment is nazwaklasyfragmentuMateusza){
-//            fragment = nazwaklasyfragmentuMateusza()
-//            fm.beginTransaction().replace(R.id.container, fragment).commit()
-//        }
+        else if(fragment is MarsFragment){
+            fragment = MarsFragment()
+            fm.beginTransaction().replace(R.id.container, fragment).commit()
+        }
         else if(fragment is TVFragment){
             fragment = TVFragment()
             fm.beginTransaction().replace(R.id.container, fragment).commit()
