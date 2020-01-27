@@ -2,19 +2,18 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/act0"
-        android:title="Main" />
+        android:id="@+id/act4"
+        android:title="Zapisane" />
+    <item
+        android:id="@+id/act3"
+        android:title="Nasa TV" />
     <item
         android:id="@+id/act1"
         android:title="Earth info" />
     <item
         android:id="@+id/act2"
-        android:title="finkcjaMateusz" />
+        android:title="Mars photos" />
     <item
-        android:id="@+id/act3"
-        android:title="Nasa TV" />
-
-    <item
-        android:id="@+id/act4"
-        android:title="Zapisane" />
+        android:id="@+id/act0"
+        android:title="Main" />
 </menu>

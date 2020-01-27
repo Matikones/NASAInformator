@@ -21,7 +21,7 @@ tools:openDrawer="start">
     android:layout_gravity="start"
     android:fitsSystemWindows="true"
     app:headerLayout="@layout/nav_header"
-    android:background="#5695F5"
+    android:background="#797878"
     app:menu="@menu/menu_details"/>
 
 
