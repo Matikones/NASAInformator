@@ -51,7 +51,7 @@
                 android:fontFamily="@font/exo_2_thin"
                 android:paddingTop="30dp"
                 android:paddingBottom="30dp"
-                android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam efficitur venenatis dolor. Nullam eget eleifend libero. Aenean condimentum, leo sit amet sollicitudin tincidunt, nisi sapien gravida urna, id posuere ante ex ut orci. Ut eget augue convallis, fringilla metus et, gravida augue. Donec ullamcorper ultrices neque, sed vestibulum nisi finibus cursus. Aenean ultrices erat ac iaculis ornare. Vestibulum nec nisi in felis sodales porta nec non libero. Ut mattis, ex vitae bibendum eleifend, nibh lacus elementum ex, in suscipit ante nibh non enim.  Donec eu mauris ac leo laoreet elementum. Vestibulum iaculis arcu quis mattis posuere. Curabitur sit amet fermentum neque. Nam porttitor id sapien ac rutrum. Morbi sem eros, luctus in egestas id, scelerisque sed lorem. Duis pulvinar aliquet porttitor. Mauris volutpat ultrices suscipit. Donec gravida arcu in erat venenatis, eleifend tempor elit interdum. Mauris eleifend quis erat in convallis. Nunc blandit malesuada elit in elementum. Maecenas tempus a lectus non auctor. Morbi nec pretium ex."
+                android:text="@string/lorem_ipsum"
                 android:textColor="#FFFFFF"
                 android:textSize="16sp" />
 
@@ -59,7 +59,9 @@
                 android:id="@+id/ivImageMain_row"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:contentDescription="@string/imageV" />
+                android:contentDescription="@string/imageV"
+                android:src="@drawable/example_image"
+                android:adjustViewBounds="true"/>
 
             <TextView
                 android:id="@+id/Url_row"
