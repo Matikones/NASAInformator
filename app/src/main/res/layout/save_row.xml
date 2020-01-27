@@ -5,7 +5,9 @@
     android:id="@+id/row"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:background="#505050"
     android:orientation="vertical"
+    android:padding="20dp"
     tools:context=".ui.main.MainFragment">
 
     <TextView
@@ -69,6 +71,11 @@
         android:checked="true"
         android:text="Zapisz"
         android:textColor="#FFFFFF" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#555CDF" />
 
 
 </LinearLayout>

@@ -75,11 +75,15 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             supportFragmentManager.beginTransaction()
                 .replace(R.id.container, Save())
                 .commitNow()
-
             val mainViewModel = MainViewModel()
             val recyclerView = findViewById<RecyclerView>(R.id.recyclerView22446)
             mainViewModel.recycler(this, recyclerView)
 
+        }
+        if (item.itemId == R.id.act5) {
+            supportFragmentManager.beginTransaction()
+                .replace(R.id.container, Info())
+                .commitNow()
         }
         drawerLayout.closeDrawer(GravityCompat.START)
         return super.onOptionsItemSelected(item)
@@ -106,6 +110,10 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         }
         else if(fragment is Save){
             fragment = Save()
+            fm.beginTransaction().replace(R.id.container, fragment).commit()
+        }
+        else if(fragment is Info){
+            fragment = Info()
             fm.beginTransaction().replace(R.id.container, fragment).commit()
         }
         else{

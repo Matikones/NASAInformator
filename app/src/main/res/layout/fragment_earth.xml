@@ -21,20 +21,22 @@
                 android:id="@+id/Title"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/exo_2_thin"
+                android:fontFamily="@font/bowlby_one_sc"
                 android:text="About your planet"
+                android:textAlignment="center"
                 android:textColor="#FFFFFF"
-                android:textSize="26sp"
+                android:textSize="32sp"
                 android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/Date_row"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/exo_2_thin"
+                android:fontFamily="@font/bowlby_one_sc"
                 android:text="2020-01-01"
                 android:textColor="#FFFFFF"
-                android:textSize="20sp" />
+                android:textSize="14sp"
+                android:textStyle="italic" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -46,20 +48,21 @@
                     android:id="@+id/txtViewLblCloud"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/bowlby_one_sc"
                     android:text="@string/LblCloudScore"
                     android:textColor="#FFFFFF"
-                    android:textSize="16sp"
-                    android:textStyle="bold" />
+                    android:textSize="14sp"
+                    android:textStyle="italic" />
 
                 <TextView
                     android:id="@+id/Cloud_score"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/exo_2_thin"
+                    android:fontFamily="@font/bowlby_one_sc"
+                    android:gravity="right"
                     android:text="0.08123456"
                     android:textColor="#FFFFFF"
-                    android:textSize="16sp"
-                    android:gravity="right"/>
+                    android:textSize="18sp" />
             </LinearLayout>
 
             <ImageView
@@ -77,7 +80,7 @@
                 android:id="@+id/Url_row"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/exo_2_thin"
+                android:fontFamily="@font/bowlby_one_sc"
                 android:text="http://www.google.pl"
                 android:textAlignment="textEnd"
                 android:textColor="#FFFFFF"
@@ -85,11 +88,15 @@
 
             <CheckBox
                 android:id="@+id/Zapisz"
+                style="@android:style/Widget.Holo.Light.CompoundButton.CheckBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:buttonTint="#FFFFFF"
+                android:fontFamily="@font/bowlby_one_sc"
                 android:text="Zapisz"
-                android:textColor="#FFFFFF" />
+                android:textColor="#FFFFFF"
+                android:textSize="12sp"
+                android:typeface="monospace" />
 
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
