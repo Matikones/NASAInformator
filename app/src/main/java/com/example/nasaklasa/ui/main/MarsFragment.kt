@@ -58,8 +58,8 @@ class MarsFragment : Fragment() {
         progressBar.visibility = View.VISIBLE
         mainViewModel.getStringMars().observe(this, object : Observer<List<String>> {
             override fun onChanged(t: List<String>?) {
-
-                var imageUrl1 = t?.get(0)
+                var imageUrl1 = t[0]
+                //var imageUrl1 = t?.get(0) - i tak nie dziala
 
                 Glide.with(this@MarsFragment)
                     .load(imageUrl1)
