@@ -2,6 +2,7 @@ package com.example.nasaklasa
 
 import android.content.Context
 import android.util.Log
+import androidx.core.content.contentValuesOf
 import androidx.lifecycle.MutableLiveData
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -90,6 +91,63 @@ class Model {
             })
         return mutableLiveData
     }
+
+    fun marsFragmentData(): MutableLiveData<List<String>>{
+
+        val mutableLiveData = MutableLiveData<List<String>>()
+        val retrofit = Retrofit.Builder()
+            .baseUrl("https://api.nasa.gov/")
+            .addConverterFactory(GsonConverterFactory.create())
+            .build()
+
+        val jsonPlaceHolderApi = retrofit.create(JsonPlaceHolderApiMars::class.java)
+
+        val call: retrofit2.Call<PostMars> = jsonPlaceHolderApi.getPosts()
+
+        call!!.enqueue(
+            object : Callback<PostMars> {
+                override fun onResponse(
+                    call: retrofit2.Call<PostMars>,
+                    response: Response<PostMars>
+                ) {
+                    if (!response.isSuccessful) {
+                        return
+                    }
+                    val posts = response.body()!!
+                    var content = ""
+                    var list = mutableListOf<String>()
+                    //list.add(posts.getPhoto()[0].img_src)
+                    //list.add(posts.getPhoto()[1].img_src)
+                    //list.add(posts.getPhoto()[2].img_src)
+                    //list.add(posts.getPhoto()[3].img_src)
+                    //list.add(posts.getPhoto()[4].img_src)
+                    //list.add(posts.getPhoto()[5].img_src)
+                    //list.add(posts.getPhoto()[6].img_src)
+                    //list.add(posts.getPhoto()[7].img_src)
+                    content += "\n img: \n" + posts.getPhoto()[0].img_src + "\n"
+                    content += "\n img: \n" + posts.getPhoto()[1].img_src + "\n"
+                    content += "\n img: \n" + posts.getPhoto()[2].img_src + "\n"
+                    content += "\n img: \n" + posts.getPhoto()[3].img_src + "\n"
+                    content += "\n img: \n" + posts.getPhoto()[4].img_src + "\n"
+                    content += "\n img: \n" + posts.getPhoto()[5].img_src + "\n"
+                    content += "\n img: \n" + posts.getPhoto()[6].img_src + "\n"
+                    content += "\n img: \n" + posts.getPhoto()[7].img_src + "\n"
+                    Log.e("jakto", content)
+                    for(i in 0..7){
+                        list.add(content)}
+                    mutableLiveData.value = list
+                }
+
+                override fun onFailure(
+                    call: retrofit2.Call<PostMars>,
+                    t: Throwable
+                ) { }
+
+            })
+        return mutableLiveData
+    }
+
+
 
     fun save(context: Context, title: String, date: String, desc: String, other: String, url: String): Int{
         var db = Db_Helper(context)

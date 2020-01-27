@@ -21,7 +21,6 @@ import kotlinx.android.synthetic.main.main_fragment.Url_row
 class MainFragment : Fragment() {
 
     lateinit var mainViewModel : MainViewModel
-
     private lateinit var viewModel: MainViewModel
 
     lateinit var progressBar: ProgressBar
