@@ -61,7 +61,7 @@
                 android:layout_height="wrap_content"
                 android:contentDescription="@string/imageV"
                 android:src="@drawable/example_image"
-                android:adjustViewBounds="true"/>
+                android:adjustViewBounds="true" />
 
             <TextView
                 android:id="@+id/Url_row"

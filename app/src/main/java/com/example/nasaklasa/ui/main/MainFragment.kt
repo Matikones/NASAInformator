@@ -1,5 +1,6 @@
 package com.example.nasaklasa.ui.main
 
+import android.content.Intent
 import android.opengl.Visibility
 import androidx.lifecycle.ViewModelProviders
 import android.os.Bundle
@@ -8,10 +9,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.FrameLayout
+import android.widget.ImageView
 import android.widget.ProgressBar
 import android.widget.Toast
 import androidx.lifecycle.Observer
 import com.bumptech.glide.Glide
+import com.example.nasaklasa.ImageActivity
 import com.example.nasaklasa.R
 import kotlinx.android.synthetic.main.content_main.*
 import kotlinx.android.synthetic.main.main_fragment.*
@@ -26,6 +29,8 @@ class MainFragment : Fragment() {
 
     lateinit var progressBar: ProgressBar
     lateinit var container: FrameLayout
+    lateinit var img: ImageView
+    lateinit var imageUrl: String
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -44,6 +49,7 @@ class MainFragment : Fragment() {
 
         progressBar = activity!!.findViewById(R.id.progressBar)
         container = activity!!.findViewById(R.id.container)
+        img = activity!!.findViewById(R.id.ivImageMain_row)
 
         container.visibility = View.INVISIBLE
         progressBar.visibility = View.VISIBLE
@@ -53,7 +59,7 @@ class MainFragment : Fragment() {
                 Date_row.text = t[1]
                 Url_row.text = t[2]
                 Desc_row.text = t[3]
-                var imageUrl = t[2]
+                imageUrl = t[2]
 
                 Glide.with(this@MainFragment)
                     .load(imageUrl)
@@ -63,7 +69,14 @@ class MainFragment : Fragment() {
 
                 progressBar.visibility = View.GONE
                 container.visibility = View.VISIBLE
+
             }
         })
+        img.setOnClickListener {
+            val intent = Intent(context, ImageActivity::class.java).apply {
+                putExtra("html", imageUrl)
+            }
+            context!!.startActivity(intent)
+        }
     }
 }
