@@ -17,4 +17,7 @@
     <item
         android:id="@+id/act4"
         android:title="Zapisane" />
+    <item
+        android:id="@+id/act5"
+        android:title="Nasa - web page" />
 </menu>

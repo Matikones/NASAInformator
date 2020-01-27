@@ -5,10 +5,12 @@ import android.content.Intent
 import android.content.IntentFilter
 import android.database.Cursor
 import android.database.CursorWrapper
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.*
+import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
@@ -29,6 +31,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 import com.example.nasaklasa.ui.main.MainViewModel
 import com.example.nasaklasa.ui.main.Save
 import com.google.android.material.navigation.NavigationView
+import kotlinx.android.synthetic.main.nav_header.view.*
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 
@@ -53,6 +56,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         drawerLayout.addDrawerListener(toggle)
         toggle.syncState()
         navView.setNavigationItemSelectedListener(this)
+
     }
 
 
@@ -81,11 +85,19 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 .replace(R.id.container, Save())
                 .commitNow()
 
+
             val mainViewModel = MainViewModel()
             val recyclerView = findViewById<RecyclerView>(R.id.recyclerView22446)
             mainViewModel.recycler(this, recyclerView)
 
         }
+        if (item.itemId == R.id.act5) {
+            val url = "https://www.nasa.gov/"
+            val intent = Intent(Intent.ACTION_VIEW)
+            intent.data = Uri.parse(url)
+            startActivity(intent)
+        }
+
         drawerLayout.closeDrawer(GravityCompat.START)
         return super.onOptionsItemSelected(item)
     }
