@@ -7,84 +7,84 @@
     tools:context=".ui.main.MarsFragment">
 
 
-    <ImageView
-        android:id="@+id/image1"
-        android:layout_width="153dp"
-        android:layout_height="143dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
-        android:src="@drawable/nasa"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <ImageView
+            android:id="@+id/image1"
+            android:layout_width="153dp"
+            android:layout_height="143dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:src="@drawable/nasa"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageView
-        android:id="@+id/image2"
-        android:layout_width="153dp"
-        android:layout_height="143dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="20dp"
-        android:src="@drawable/nasa"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <ImageView
+            android:id="@+id/image2"
+            android:layout_width="153dp"
+            android:layout_height="143dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:src="@drawable/nasa"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageView
-        android:id="@+id/image3"
-        android:layout_width="153dp"
-        android:layout_height="143dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
-        android:src="@drawable/nasa"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/image1" />
+        <ImageView
+            android:id="@+id/image3"
+            android:layout_width="153dp"
+            android:layout_height="143dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:src="@drawable/nasa"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/image1" />
 
-    <ImageView
-        android:id="@+id/image4"
-        android:layout_width="153dp"
-        android:layout_height="143dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="20dp"
-        android:src="@drawable/nasa"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/image2" />
+        <ImageView
+            android:id="@+id/image4"
+            android:layout_width="153dp"
+            android:layout_height="143dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:src="@drawable/nasa"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/image2" />
 
-    <ImageView
-        android:id="@+id/image5"
-        android:layout_width="153dp"
-        android:layout_height="143dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="20dp"
-        android:src="@drawable/nasa"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/image4" />
+        <ImageView
+            android:id="@+id/image5"
+            android:layout_width="153dp"
+            android:layout_height="143dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:src="@drawable/nasa"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/image4" />
 
-    <ImageView
-        android:id="@+id/image7"
-        android:layout_width="153dp"
-        android:layout_height="143dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="20dp"
-        android:src="@drawable/nasa"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/image5" />
+        <ImageView
+            android:id="@+id/image7"
+            android:layout_width="153dp"
+            android:layout_height="143dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:src="@drawable/nasa"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/image5" />
 
-    <ImageView
-        android:id="@+id/image8"
-        android:layout_width="153dp"
-        android:layout_height="143dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
-        android:src="@drawable/nasa"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/image6" />
+        <ImageView
+            android:id="@+id/image8"
+            android:layout_width="153dp"
+            android:layout_height="143dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:src="@drawable/nasa"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/image6" />
 
-    <ImageView
-        android:id="@+id/image6"
-        android:layout_width="153dp"
-        android:layout_height="143dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
-        android:src="@drawable/nasa"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/image3" />
+        <ImageView
+            android:id="@+id/image6"
+            android:layout_width="153dp"
+            android:layout_height="143dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:src="@drawable/nasa"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/image3" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

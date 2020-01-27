@@ -58,14 +58,64 @@ class MarsFragment : Fragment() {
         progressBar.visibility = View.VISIBLE
         mainViewModel.getStringMars().observe(this, object : Observer<List<String>> {
             override fun onChanged(t: List<String>?) {
-                var imageUrl1 = t[0]
-                //var imageUrl1 = t?.get(0) - i tak nie dziala
+                //var imageUrl1 = t[0]
+                var imageUrl1 = t?.get(0)
+                var imageUrl2 = t?.get(1)
+                var imageUrl3 = t?.get(2)
+                var imageUrl4 = t?.get(3)
+                var imageUrl5 = t?.get(4)
+                var imageUrl6 = t?.get(5)
+                var imageUrl7 = t?.get(6)
+                var imageUrl8 = t?.get(7)
 
+                Log.e("cos", imageUrl1)
                 Glide.with(this@MarsFragment)
                     .load(imageUrl1)
                     .fitCenter()
                     .placeholder(R.mipmap.ic_nasa_foreground)
                     .into(image1)
+
+                Glide.with(this@MarsFragment)
+                    .load(imageUrl2)
+                    .fitCenter()
+                    .placeholder(R.mipmap.ic_nasa_foreground)
+                    .into(image2)
+
+                Glide.with(this@MarsFragment)
+                    .load(imageUrl3)
+                    .fitCenter()
+                    .placeholder(R.mipmap.ic_nasa_foreground)
+                    .into(image3)
+
+                Glide.with(this@MarsFragment)
+                    .load(imageUrl4)
+                    .fitCenter()
+                    .placeholder(R.mipmap.ic_nasa_foreground)
+                    .into(image4)
+
+                Glide.with(this@MarsFragment)
+                    .load(imageUrl5)
+                    .fitCenter()
+                    .placeholder(R.mipmap.ic_nasa_foreground)
+                    .into(image5)
+
+                Glide.with(this@MarsFragment)
+                    .load(imageUrl6)
+                    .fitCenter()
+                    .placeholder(R.mipmap.ic_nasa_foreground)
+                    .into(image6)
+
+                Glide.with(this@MarsFragment)
+                    .load(imageUrl7)
+                    .fitCenter()
+                    .placeholder(R.mipmap.ic_nasa_foreground)
+                    .into(image7)
+
+                Glide.with(this@MarsFragment)
+                    .load(imageUrl8)
+                    .fitCenter()
+                    .placeholder(R.mipmap.ic_nasa_foreground)
+                    .into(image8)
 
                 progressBar.visibility = View.GONE
                 container.visibility = View.VISIBLE

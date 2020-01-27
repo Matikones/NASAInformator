@@ -116,25 +116,25 @@ class Model {
                     val posts = response.body()!!
                     var content = ""
                     var list = mutableListOf<String>()
-                    //list.add(posts.getPhoto()[0].img_src)
-                    //list.add(posts.getPhoto()[1].img_src)
-                    //list.add(posts.getPhoto()[2].img_src)
-                    //list.add(posts.getPhoto()[3].img_src)
-                    //list.add(posts.getPhoto()[4].img_src)
-                    //list.add(posts.getPhoto()[5].img_src)
-                    //list.add(posts.getPhoto()[6].img_src)
-                    //list.add(posts.getPhoto()[7].img_src)
-                    content += "\n img: \n" + posts.getPhoto()[0].img_src + "\n"
-                    content += "\n img: \n" + posts.getPhoto()[1].img_src + "\n"
-                    content += "\n img: \n" + posts.getPhoto()[2].img_src + "\n"
-                    content += "\n img: \n" + posts.getPhoto()[3].img_src + "\n"
-                    content += "\n img: \n" + posts.getPhoto()[4].img_src + "\n"
-                    content += "\n img: \n" + posts.getPhoto()[5].img_src + "\n"
-                    content += "\n img: \n" + posts.getPhoto()[6].img_src + "\n"
-                    content += "\n img: \n" + posts.getPhoto()[7].img_src + "\n"
-                    Log.e("jakto", content)
-                    for(i in 0..7){
-                        list.add(content)}
+                    list.add(posts.getPhoto()[0].img_src)
+                    list.add(posts.getPhoto()[1].img_src)
+                    list.add(posts.getPhoto()[2].img_src)
+                    list.add(posts.getPhoto()[3].img_src)
+                    list.add(posts.getPhoto()[4].img_src)
+                    list.add(posts.getPhoto()[5].img_src)
+                    list.add(posts.getPhoto()[6].img_src)
+                    list.add(posts.getPhoto()[7].img_src)
+                    //content += "\n img: \n" + posts.getPhoto()[0].img_src + "\n"
+                    //content += "\n img: \n" + posts.getPhoto()[1].img_src + "\n"
+                    //content += "\n img: \n" + posts.getPhoto()[2].img_src + "\n"
+                    //content += "\n img: \n" + posts.getPhoto()[3].img_src + "\n"
+                    //content += "\n img: \n" + posts.getPhoto()[4].img_src + "\n"
+                    //content += "\n img: \n" + posts.getPhoto()[5].img_src + "\n"
+                    //content += "\n img: \n" + posts.getPhoto()[6].img_src + "\n"
+                    //content += "\n img: \n" + posts.getPhoto()[7].img_src + "\n"
+                    //Log.e("jakto", content)
+                    //for(i in 0..7){
+                    //    list.add(content)}
                     mutableLiveData.value = list
                 }
 
