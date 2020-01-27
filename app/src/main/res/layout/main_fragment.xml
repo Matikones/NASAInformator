@@ -65,6 +65,8 @@
                 android:id="@+id/Url_row"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="#00708FBD"
+                android:clickable="true"
                 android:fontFamily="@font/exo_2_thin"
                 android:text="http://www.google.pl"
                 android:textAlignment="textEnd"
