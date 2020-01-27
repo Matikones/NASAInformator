@@ -13,12 +13,18 @@
         android:layout_height="wrap_content"
         app:useWebUi="true" />
 
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#050202"
+        android:padding="20dp">
+
     <TextView
         android:id="@+id/textView2"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:text="@string/lorem_ipsum"
-        android:textColor="#FFFFFF"
-        android:padding="20dp"/>
+        android:textColor="#FFFFFF" />
+    </androidx.core.widget.NestedScrollView>
 
 </LinearLayout>
