@@ -66,12 +66,12 @@
                 android:id="@+id/ivImage"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
                 android:contentDescription="@string/imageV"
                 android:cropToPadding="false"
-                android:scaleType="centerInside"
-                android:src="@drawable/example_image"
                 android:paddingTop="20dp"
-                android:adjustViewBounds="true"/>
+                android:scaleType="centerInside"
+                android:src="@drawable/example_image" />
 
             <TextView
                 android:id="@+id/Url_row"

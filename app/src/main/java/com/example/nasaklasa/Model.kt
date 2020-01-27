@@ -92,6 +92,44 @@ class Model {
         return mutableLiveData
     }
 
+    fun marsFragmentData(): MutableLiveData<List<String>>{
+
+        val mutableLiveData = MutableLiveData<List<String>>()
+
+        val retrofit = Retrofit.Builder()
+            .baseUrl("https://api.nasa.gov/mars-photos/")
+            .addConverterFactory(GsonConverterFactory.create())
+            .build()
+        val jsonPlaceHolderApi = retrofit.create(
+            JsonPlaceHolderApiMars::class.java
+        )
+        val call: retrofit2.Call<List<PostMars>> = jsonPlaceHolderApi.getPosts()
+
+        call!!.enqueue(
+            object : Callback<List<PostMars>> {
+                override fun onResponse(
+                    call: retrofit2.Call<List<PostMars>>,
+                    response: Response<List<PostMars>>
+                ) {
+                    if (!response.isSuccessful) {
+                        return
+                    }
+                    val posts = response.body()!!
+                    var list = mutableListOf<String>()
+                    for (post in posts){
+                        list.add(post.getUrl().toString())
+                    }
+                    mutableLiveData.value = list
+                }
+
+                override fun onFailure(
+                    call: retrofit2.Call<List<PostMars>>,
+                    t: Throwable
+                ) { }
+            })
+        return mutableLiveData
+    }
+
     fun save(context: Context, title: String, date: String, desc: String, other: String, url: String): Int{
         var db = Db_Helper(context)
         val newSaveFormat = SaveFormat(null, title, date, desc, other, url)

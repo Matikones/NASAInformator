@@ -30,6 +30,13 @@ class MainViewModel : ViewModel() {
         return mutableLiveData2
     }
 
+    var mutableLiveData3 = MutableLiveData<List<String>>()
+
+    fun getStringMars(): LiveData<List<String>> {
+        mutableLiveData3 = model.marsFragmentData()
+        return mutableLiveData3
+    }
+
     fun save(context: Context, title: String, date: String, desc: String, other: String, url: String){
         lastRecord = model.save(context, title, date, desc, other, url)
         Log.e("czydziała","działa - ")
