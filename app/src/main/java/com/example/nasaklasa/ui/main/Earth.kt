@@ -6,6 +6,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.FrameLayout
+import android.widget.ProgressBar
 import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
@@ -18,6 +20,9 @@ class Earth : Fragment() {
 
     lateinit var mainViewModel : MainViewModel
     private lateinit var viewModel: MainViewModel
+
+    lateinit var progressBar: ProgressBar
+    lateinit var container: FrameLayout
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -33,6 +38,10 @@ class Earth : Fragment() {
         mainViewModel = activity!!.run {
             ViewModelProviders.of(this).get(MainViewModel::class.java)
         }
+        progressBar = activity!!.findViewById(R.id.progressBar)
+        container = activity!!.findViewById(R.id.container)
+        container.visibility = View.INVISIBLE
+        progressBar.visibility = View.VISIBLE
 
         mainViewModel.getStringEarth().observe(this, object : Observer<List<String>> {
             override fun onChanged(t: List<String>) {
@@ -46,6 +55,9 @@ class Earth : Fragment() {
                     .fitCenter()
                     .placeholder(R.mipmap.ic_nasa_foreground)
                     .into(ivImage)
+
+                progressBar.visibility = View.GONE
+                container.visibility = View.VISIBLE
             }
         })
 //------------------------------------------------------------------------------
