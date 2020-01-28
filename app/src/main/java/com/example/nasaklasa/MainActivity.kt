@@ -54,27 +54,32 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             supportFragmentManager.beginTransaction()
                 .replace(R.id.container, MainFragment())
                 .commitNow()
+            Toast.makeText(applicationContext,"Main",Toast.LENGTH_SHORT).show()
 
         }
         if (item.itemId == R.id.act1){
             supportFragmentManager.beginTransaction()
                 .replace(R.id.container, Earth())
                 .commitNow()
+            Toast.makeText(applicationContext,"Earth",Toast.LENGTH_SHORT).show()
         }
         if (item.itemId == R.id.act2){
             supportFragmentManager.beginTransaction()
                 .replace(R.id.container, MarsFragment())
                 .commitNow()
+            Toast.makeText(applicationContext,"Mars photos",Toast.LENGTH_SHORT).show()
         }
         if (item.itemId == R.id.act3){
             supportFragmentManager.beginTransaction()
                 .replace(R.id.container, TVFragment())
                 .commitNow()
+            Toast.makeText(applicationContext,"NASA TV",Toast.LENGTH_SHORT).show()
         }
         if (item.itemId == R.id.act4){
             supportFragmentManager.beginTransaction()
                 .replace(R.id.container, Save())
                 .commitNow()
+            Toast.makeText(applicationContext,"Save",Toast.LENGTH_SHORT).show()
 
             val mainViewModel = MainViewModel()
             val recyclerView = findViewById<RecyclerView>(R.id.recyclerView22446)
