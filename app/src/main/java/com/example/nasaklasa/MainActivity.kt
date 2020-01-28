@@ -86,7 +86,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             mainViewModel.recycler(this, recyclerView)
 
         }
-        drawerLayout.closeDrawer(GravityCompat.START)
+
         return super.onOptionsItemSelected(item)
     }
 
