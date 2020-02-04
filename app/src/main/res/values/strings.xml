@@ -2,7 +2,11 @@
     <string name="app_name">NASA</string>
     <string name="imageV">image</string>
     <string name="LblCloudScore">Cloud score: </string>
-
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="TitleEarthInfo">About your planet</string>
+    <string name="LblCheckBoxSave">Save</string>
+    <string name="MenuMain">Main</string>
+    <string name="MenuEarthInfo">Earth info</string>
+    <string name="MenuMarsPhotos">Mars photos</string>
+    <string name="MenuNasaTV">Nasa TV</string>
+    <string name="MenuSaved">Saved</string>
 </resources>

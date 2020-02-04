@@ -3,18 +3,18 @@
 
     <item
         android:id="@+id/act0"
-        android:title="Main" />
+        android:title="@string/MenuMain" />
     <item
         android:id="@+id/act1"
-        android:title="Earth info" />
+        android:title="@string/MenuEarthInfo" />
     <item
         android:id="@+id/act2"
-        android:title="Mars photos" />
+        android:title="@string/MenuMarsPhotos" />
     <item
         android:id="@+id/act3"
-        android:title="Nasa TV" />
+        android:title="@string/MenuNasaTV" />
 
     <item
         android:id="@+id/act4"
-        android:title="Zapisane" />
+        android:title="@string/MenuSaved" />
 </menu>

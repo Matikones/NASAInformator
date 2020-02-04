@@ -22,7 +22,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/exo_2_thin"
-                android:text="About your planet"
+                android:text="@string/TitleEarthInfo"
                 android:textColor="#FFFFFF"
                 android:textSize="26sp"
                 android:textStyle="bold" />
@@ -88,7 +88,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:buttonTint="#FFFFFF"
-                android:text="Zapisz"
+                android:text="@string/LblCheckBoxSave"
                 android:textColor="#FFFFFF" />
 
         </LinearLayout>
