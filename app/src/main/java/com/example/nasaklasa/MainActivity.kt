@@ -1,8 +1,10 @@
 package com.example.nasaklasa
 
 import android.content.Context
+import android.content.Intent
 import android.database.Cursor
 import android.database.CursorWrapper
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -80,6 +82,12 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             val recyclerView = findViewById<RecyclerView>(R.id.recyclerView22446)
             mainViewModel.recycler(this, recyclerView)
 
+        }
+        if (item.itemId == R.id.act5) {
+            val url = "https://www.nasa.gov/"
+            val intent = Intent(Intent.ACTION_VIEW)
+            intent.data = Uri.parse(url)
+            startActivity(intent)
         }
         drawerLayout.closeDrawer(GravityCompat.START)
         return super.onOptionsItemSelected(item)
